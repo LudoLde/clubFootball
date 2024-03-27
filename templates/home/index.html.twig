@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <table class="table table-hover mt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Club</th>
+      <th scope="col">Pays</th>
+      <th scope="col">Budget 💰</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for club in clubs %}
+    <tr class="table-primary">
+      <th>{{club.id}}</th>
+      <td>{{club.nom}}</td>
+      <td>{{club.pays}}</td>
+      <td>{{club.budget}} €</td>
+      <td>
+          <a class="btn btn-secondary" href="{{ path('club.update', {id: club.id}) }}">Modifier</a>
+      </td>
+      <td>
+          <a class="btn btn-secondary" href="{{ path('club.delete', {id: club.id}) }}">Supprimer</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="navigation mt-4 d-flex justify-content-center">
+    {{ knp_pagination_render(clubs) }}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends ('base.html.twig') %}
+
+{% block body %}
+
+<div class="container">
+    {{ form_start(form) }}
+    {{ form_errors(form)}}
+    <div class="form-control">
+        {{ form_label(form.nom) }}
+            {{ form_errors(form.nom) }}
+        {{ form_widget(form.nom) }}
+     </div>
+    
+    <div class="form-control">
+        {{ form_label(form.pays) }}
+            {{ form_errors(form.pays) }}
+        {{ form_widget(form.pays) }}
+    </div>
+
+    
+    <div class="form-control">
+        {{ form_label(form.budget) }}
+            {{ form_errors(form.budget) }}
+        {{ form_widget(form.budget) }}
+    </div>   
+    {{ form_row(form.submit) }}
+
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}
