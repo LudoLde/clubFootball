@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'club.home', methods:['GET'])]
+    #[Route('/club', name: 'club.home', methods:['GET'])]
     public function index(
         ClubRepository $repository, 
         PaginatorInterface $paginator, 

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    {{ form_start(form) }}
+    <div class="form-control mt-4">
+        {{ form_label(form.firstName) }}
+            {{ form_errors(form.firstName) }}
+        {{ form_widget(form.firstName) }}
+     </div>    
+    <div class="form-control mt-4">
+        {{ form_label(form.nom) }}
+            {{ form_errors(form.nom) }}
+        {{ form_widget(form.nom) }}
+    </div>
+    <div class="form-control w-25  mt-4">
+        {{ form_label(form.age) }}
+            {{ form_errors(form.age) }}
+        {{ form_widget(form.age) }}
+    </div>  
+    <div class="form-control w-25  mt-4">
+        {{ form_label(form.numero) }}
+            {{ form_errors(form.numero) }}
+        {{ form_widget(form.numero) }}
+    </div> 
+    <div class="form-control w-25 mt-4">
+        {{ form_label(form.poste) }}
+            {{ form_errors(form.poste) }}
+        {{ form_widget(form.poste) }}
+    </div> 
+    <div class="form-control mt-4">
+        {{ form_label(form.nationalite) }}
+            {{ form_errors(form.nationalite) }}
+        {{ form_widget(form.nationalite) }}
+    </div> 
+    <div class="form-control w-25 mt-4">
+        {{ form_label(form.dateNaissance) }}
+            {{ form_errors(form.dateNaissance) }}
+        {{ form_widget(form.dateNaissance) }}
+    </div>  
+    <div class="form-control w-25 mt-4">
+        {{ form_label(form.club) }}
+            {{ form_errors(form.club) }}
+        {{ form_widget(form.club) }}
+    </div> 
+    {{ form_row(form.submit) }}
+
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}
