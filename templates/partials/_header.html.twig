@@ -3,11 +3,14 @@
 {% block header %}
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">ClubFoot ⚽️</a>
+    <a class="navbar-brand" href="{{ path('security.login') }}">ClubFoot ⚽️</a>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ path('club.home') }}">Clubs
+          <a class="nav-link" href="{{ path('security.registration') }}">Créer un compte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('club.home') }}">Clubs
             <span class="visually-hidden">(current)</span>
           </a>
         </li>

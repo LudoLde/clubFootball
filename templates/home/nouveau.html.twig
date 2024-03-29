@@ -2,24 +2,27 @@
 
 {% block body %}
 
-<div class="container">
+<div class="d-flex justify-content-center mt-4">
     {{ form_start(form) }}
-    <div class="form-control">
-        {{ form_label(form.nom) }}
+    <div class="form-control mt-4 bg-primary">
+        {{ form_label(form.nom, 'Nom: ', {'label_attr': {'class': 'text-white'}}) }}
             {{ form_errors(form.nom) }}
         {{ form_widget(form.nom) }}
      </div>    
-    <div class="form-control">
-        {{ form_label(form.pays) }}
+    <div class="form-control mt-4 bg-primary">
+        {{ form_label(form.pays, 'Pays: ', {'label_attr': {'class': 'text-white'}}) }}
             {{ form_errors(form.pays) }}
         {{ form_widget(form.pays) }}
     </div>
-    <div class="form-control">
-        {{ form_label(form.budget) }}
+    <div class="form-control mt-4 bg-primary">
+        {{ form_label(form.budget, 'Budget: ', {'label_attr': {'class': 'text-white'}}) }}
             {{ form_errors(form.budget) }}
         {{ form_widget(form.budget) }}
-    </div>   
-    {{ form_row(form.submit) }}
+    </div> 
+    <div class=" mt-4">
+        {{ form_row(form.submit) }}
+    </div>  
+    
 
     {{ form_end(form) }}
 </div>

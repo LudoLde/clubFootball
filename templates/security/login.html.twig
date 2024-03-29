@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClubFootball ⚽️ Connexion{% endblock %}
+
+{% block body %}
+<div>
+  <h1 class="d-flex justify-content-center mt-5 mb-4 text-primary">Bonjour et bienvenue chez ClubFootball !!</h1>
+    {% if error %}
+        <div class="w-50 mx-5 mt-2 alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+  
+  <form action="{{ path('security.login') }}" class="container mt-5" method="post">
+      <div>
+        <label for="username" class="form-label mt-4 text-primary">@dresse email</label>
+        <input type="email" class="form-control w-25 text-primary" id="username" aria-describedby="emailHelp" placeholder="exemple@clubfootball.com" name="_username">
+        
+      </div>
+      <div>
+        <label for="exampleInputPassword1" class="form-label mt-4 text-primary">Password</label>
+        <input type="password" class="form-control w-25  text-primary" id="exampleInputPassword1" placeholder="********" autocomplete="off" name="_password">
+        <small id="messageHelp" class="form-text text-muted">Ne partagez jamais votre mot de passe ⛔️</small>  
+      </div>
+      <button class="d-flex justify-content-center btn btn-primary mt-4">Se connecter</button>
+  </form>
+</div>
+{% endblock %}

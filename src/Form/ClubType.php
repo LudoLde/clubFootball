@@ -19,7 +19,7 @@ class ClubType extends AbstractType
         $builder
             ->add('nom', TextType::class,[
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-4'
                 ],
                 'label' => 'Nom du club:',
                 'label_attr' => [
@@ -28,7 +28,7 @@ class ClubType extends AbstractType
             ])
             ->add('pays', TextType::class,[
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-4'
                 ],
                 'label' => 'Pays:',
                 'label_attr' => [
@@ -37,7 +37,7 @@ class ClubType extends AbstractType
                 ])
             ->add('budget', IntegerType::class,[
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-4'
                 ],
                 'label' => 'Budget 💰:',
                 'label_attr' => [
