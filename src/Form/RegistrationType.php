@@ -48,8 +48,14 @@ class RegistrationType extends AbstractType
                     'class' => 'form-control mt-4 text-primary'
                 ],'label' => 'Saisir un mot de passe',
                 'label_attr' => ['class'=> 'form-label mt-4 text-primary'],
-                'first_options'  => ['label' => 'Mot de passe '],
-                'second_options' => ['label' => 'Confirmer le mot de passe '],
+                'first_options'  => ['label' => 'Mot de passe ',
+                'label_attr' => [
+                    'class'=> 'form-label mt-4'
+                ]],
+                'second_options' => ['label' => 'Confirmer le mot de passe ',
+                 'label_attr' => [
+                    'class'=> 'form-label mt-4'
+                ]],
             ])
 
             ->add('submit', submitType::class, [

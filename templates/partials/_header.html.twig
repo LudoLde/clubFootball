@@ -1,14 +1,11 @@
 {% extends ('base.html.twig') %}
 
 {% block header %}
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+{% if app.user %}
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ path('security.login') }}">ClubFoot ⚽️</a>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('security.registration') }}">Créer un compte</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ path('club.home') }}">Clubs
             <span class="visually-hidden">(current)</span>
@@ -23,8 +20,36 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ path('joueur.nouveau') }}">Ajouter un Joueur</a>
         </li>
+      </ul> 
+      <div class="d-flex">
+        <ul class="navbar-nav me-auto">
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{app.user.pseudo}}</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ path('security.logout') }}">Deconnexion</a>
+          </div>
+        </li>
+      </ul>
+      </div> 
+    </div>
+  </div>
+</nav>
+{% else %}
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ path('security.login') }}">ClubFoot ⚽️</a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('security.registration') }}">Créer un compte</a>
+        </li>
       </ul>  
     </div>
   </div>
 </nav>
+{% endif %}
 {% endblock %}

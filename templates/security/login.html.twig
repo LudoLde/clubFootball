@@ -3,6 +3,11 @@
 {% block title %}ClubFootball ⚽️ Connexion{% endblock %}
 
 {% block body %}
+{% if app.user %}
+<div>
+  <h1 class="d-flex justify-content-center mt-5 mb-4 text-primary">Bonjour {{ app.user.fullName }} et bienvenue chez ClubFootball !!</h1>
+</div>
+{% else %}
 <div>
   <h1 class="d-flex justify-content-center mt-5 mb-4 text-primary">Bonjour et bienvenue chez ClubFootball !!</h1>
     {% if error %}
@@ -23,4 +28,5 @@
       <button class="d-flex justify-content-center btn btn-primary mt-4">Se connecter</button>
   </form>
 </div>
+{% endif %}
 {% endblock %}
